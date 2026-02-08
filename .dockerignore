@@ -1,0 +1,30 @@
+# Ignorar node_modules para evitar que se copien al contenedor
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Ignorar archivos de compilación
+dist
+build
+
+# Ignorar archivos de configuración local y variables de entorno
+.env
+*.env
+
+# Ignorar archivos de configuración de Docker
+Dockerfile
+.dockerignore
+
+# Ignorar archivos del sistema y de editores
+.idea
+.vscode
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos temporales y logs generados por la aplicación
+*.swp
+*.swo
+*.bak
+*.tmp
+logs
+*.log
