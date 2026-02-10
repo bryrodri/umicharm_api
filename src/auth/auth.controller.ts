@@ -15,7 +15,7 @@ export class AuthController {
       if (!user) {
         throw new HttpException('Invalid credentials', HttpStatus.UNAUTHORIZED);
       }
-      return this.authService.loginAdmin(user);
+      return this.authService.login(user);
     }
     
 }

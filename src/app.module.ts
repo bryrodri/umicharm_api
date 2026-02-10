@@ -7,6 +7,8 @@ import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { CategoriesModule } from './categories/categories.module';
+import { FranchisesModule } from './franchises/franchises.module';
 
 @Module({
   imports: [
@@ -30,6 +32,8 @@ import { AuthModule } from './auth/auth.module';
     }),
     UsersModule,
     AuthModule,
+    CategoriesModule,
+    FranchisesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
