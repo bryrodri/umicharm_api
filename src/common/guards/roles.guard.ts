@@ -14,7 +14,6 @@ export class RolesGuard implements CanActivate {
     ]);
 
     // Si la ruta no tiene el decorador @Roles, se permite el acceso por defecto
-    console.log("requered ", requiredRoles)
     if (!requiredRoles) {
       return true;
     }
@@ -22,7 +21,6 @@ export class RolesGuard implements CanActivate {
     // 2. Obtener la información del usuario del token
     // La información del token (payload) está en req.user gracias al JwtAuthGuard previo
     const { user } = context.switchToHttp().getRequest();
-    console.log("requered ", user)
     // 3. Comparar el rol del usuario con los roles requeridos
     return requiredRoles.some((role) => user.role_name === role);
   }

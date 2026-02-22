@@ -29,6 +29,7 @@ export class FranchisesService {
     async findAll(): Promise<Franchise[]> {
     return await this.franchiseRepository.find({
       order: { name: 'ASC' }, // Ordenadas alfabéticamente para facilitar la vista al cliente
+      where: {status :"active"}
     });
   }
 

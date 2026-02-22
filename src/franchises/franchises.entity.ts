@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { ApiProperty } from '@nestjs/swagger';
+import { Product } from 'src/products/products.entity';
 
 @Entity('franchise')
 export class Franchise {
@@ -29,6 +30,6 @@ export class Franchise {
   @UpdateDateColumn({ type: 'timestamp' })
   updated_at: Date;
 
-//   @OneToMany(() => ClienteActividad, cliente => cliente.actividad)
-//   clienteActividades: ClienteActividad[]
+  @OneToMany(() => Product, (product) => product.franchise)
+  products: Product[];
 }

@@ -9,10 +9,14 @@ import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
 import { FranchisesModule } from './franchises/franchises.module';
+import { MediaModule } from './media/media.module';
+import { ProductsModule } from './products/products.module';
+import { CarouselModule } from './carousel/carousel.module';
+import { ConfigAppModule } from './config-app/config-app.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({isGlobal: true,}),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..','public'),
       serveRoot: '/public'
@@ -34,6 +38,11 @@ import { FranchisesModule } from './franchises/franchises.module';
     AuthModule,
     CategoriesModule,
     FranchisesModule,
+    MediaModule,
+    ProductsModule,
+    CarouselModule,
+    ConfigModule,
+    ConfigAppModule,
   ],
   controllers: [AppController],
   providers: [AppService],
