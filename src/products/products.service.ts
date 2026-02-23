@@ -85,7 +85,7 @@ export class ProductsService {
       relations: ['category', 'franchise'],
       order: {
         sortOrder: 'ASC',
-        createdAt: 'DESC',
+        createdAt: 'ASC',
       },
     });
 
