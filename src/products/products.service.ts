@@ -61,7 +61,7 @@ export class ProductsService {
   ): Promise<{ products: Product[]; total: number }> {
     
     const whereCondition: any = {};
-
+    whereCondition.status =`available`
     if (name) {
       whereCondition.name = ILike(`%${name}%`);
     }
